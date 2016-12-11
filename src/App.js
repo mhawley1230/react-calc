@@ -4,13 +4,15 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      value: 0
+      value: 0,
+      num: ''
     }
+    this.update = this.update.bind(this)
   }
 
   update ( e ){
-    console.log(this);
-    this.setState({value: e.target.value})
+    debugger;
+    this.setState({value: e.target.textContent})
   }
 
   render() {
@@ -18,31 +20,31 @@ class App extends Component {
       <div>
         <h1>{this.state.value}</h1>
         <table>
-          <tr>
-            <button onClick={this.update.bind(this)}>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
-          </tr>
-          <tr>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
+          <tbody>
+            <button onClick={this.update}>1</button>
+            <button onClick={this.update}>2</button>
+            <button onClick={this.update}>3</button>
+            <button onClick={this.update}>+</button>
+          </tbody>
+          <tbody>
+            <button onClick={this.update}>4</button>
+            <button onClick={this.update}>5</button>
+            <button onClick={this.update}>6</button>
             <button>-</button>
-          </tr>
-          <tr>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
+          </tbody>
+          <tbody>
+            <button onClick={this.update}>7</button>
+            <button onClick={this.update}>8</button>
+            <button onClick={this.update}>9</button>
             <button>x</button>
-          </tr>
-          <tr>
+          </tbody>
+          <tbody>
             <button>C</button>
-            <button>0</button>
+            <button onClick={this.update}>0</button>
             <button>.</button>
             <button>/</button>
             <button>=</button>
-          </tr>
+          </tbody>
         </table>
       </div>
     )
