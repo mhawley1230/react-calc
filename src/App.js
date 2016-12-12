@@ -4,43 +4,51 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      value: 0,
-      num: ''
+      currentValue: 0
     }
-    this.update = this.update.bind(this)
+    this.input = this.input.bind(this)
   }
 
-  update ( e ){
-    debugger;
-    this.setState({value: e.target.textContent})
+  addition(){}
+
+  subtraction(){}
+
+  multiplication(){}
+
+  division(){}
+
+  reset(){}
+
+  input(e){
+    this.setState({currentValue: e.target.textContent})
   }
 
   render() {
     return (
       <div>
-        <h1>{this.state.value}</h1>
+        <h1>{this.state.currentValue}</h1>
         <table>
           <tbody>
-            <button onClick={this.update}>1</button>
-            <button onClick={this.update}>2</button>
-            <button onClick={this.update}>3</button>
-            <button onClick={this.update}>+</button>
+            <button onClick={this.input}>1</button>
+            <button onClick={this.input}>2</button>
+            <button onClick={this.input}>3</button>
+            <button onClick={this.input}>+</button>
           </tbody>
           <tbody>
-            <button onClick={this.update}>4</button>
-            <button onClick={this.update}>5</button>
-            <button onClick={this.update}>6</button>
-            <button>-</button>
+            <button onClick={this.input}>4</button>
+            <button onClick={this.input}>5</button>
+            <button onClick={this.input}>6</button>
+            <button onClick={this.input}>-</button>
           </tbody>
           <tbody>
-            <button onClick={this.update}>7</button>
-            <button onClick={this.update}>8</button>
-            <button onClick={this.update}>9</button>
-            <button>x</button>
+            <button onClick={this.input}>7</button>
+            <button onClick={this.input}>8</button>
+            <button onClick={this.input}>9</button>
+            <button onClick={this.input}>*</button>
           </tbody>
           <tbody>
-            <button>C</button>
-            <button onClick={this.update}>0</button>
+            <button onClick={this.input}>C</button>
+            <button onClick={this.input}>0</button>
             <button>.</button>
             <button>/</button>
             <button>=</button>
